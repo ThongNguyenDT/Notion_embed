@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/:git_path/:id",
+    path: "/:id",
     element: <App />,
   },
 ]);

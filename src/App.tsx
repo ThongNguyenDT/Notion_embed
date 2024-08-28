@@ -9,13 +9,13 @@ import { Pdf } from 'react-notion-x/build/third-party/pdf'
 import defaultRecordMap from './record-map.json'
 import myRecordMap from './record-map copy.json'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+
 
 function App() {
   const dfRecordMap = myRecordMap as unknown as ExtendedRecordMap
   const testRecordMap = myRecordMap 
   const [recordMap, setRecordMap] = useState(dfRecordMap)
-  const params = useParams();
+
   useEffect(() => {
     document.title = "Notion Render tool"
     async function getStaticProps(id: any) {
@@ -31,7 +31,13 @@ function App() {
 
       setRecordMap(result as unknown as ExtendedRecordMap);
     }
-    getStaticProps(params.id)
+      const parts = document.location.href.split('/');
+      const notionIndex = parts.indexOf('Notion_embed');
+
+      if (notionIndex !== -1 && parts[notionIndex + 1]) {
+        const id = parts[notionIndex + 1];
+        getStaticProps(id)
+      }
   }, [])
 
   return (
