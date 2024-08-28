@@ -24,6 +24,10 @@ const router = createBrowserRouter([
     path: "/:id",
     element: <App />,
   },
+  {
+    path: "/:p/:id",
+    element: <App />,
+  },
 ]);
 
 
