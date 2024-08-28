@@ -27,7 +27,7 @@ function App() {
       const result = testRecordMap
 
       result.block = data
-      console.log(`https://notion-fetch-api.vercel.app/api/${id?id:'97025400bdcd412eb087dd130af3302d'}`);
+      // console.log(`https://notion-fetch-api.vercel.app/api/${id?id:'97025400bdcd412eb087dd130af3302d'}`);
 
       setRecordMap(result as unknown as ExtendedRecordMap);
     }
