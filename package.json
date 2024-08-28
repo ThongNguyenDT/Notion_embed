@@ -1,14 +1,13 @@
 {
   "name": "notion-render",
   "version": "6.16.1",
-  "homepage": "https://ThongNguyenDT.github.io/Notion_render",
   "private": true,
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "react-scripts start",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build --help",
     "eject": "react-scripts eject"
   },
   "dependencies": {

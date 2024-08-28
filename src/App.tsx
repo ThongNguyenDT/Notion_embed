@@ -17,10 +17,11 @@ function App() {
   const [recordMap, setRecordMap] = useState(dfRecordMap)
   const params = useParams();
   useEffect(() => {
+    document.title = "Notion Render tool"
     async function getStaticProps(id: any) {
 
       const data = await fetch(
-        `https://notion-api.splitbee.io/v1/page/${id?id:'97025400bdcd412eb087dd130af3302d'}`
+        `https://notion-fetch-api.vercel.app/api/${id?id:'97025400bdcd412eb087dd130af3302d'}`
       ).then(res => res.json());
 
       const result = testRecordMap
