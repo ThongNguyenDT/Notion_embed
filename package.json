@@ -1,6 +1,7 @@
 {
   "name": "notion-render",
   "version": "6.16.1",
+  "homepage": "https://thongnguyendt.github.io/Notion_render/",
   "private": true,
   "scripts": {
     "predeploy": "npm run build",

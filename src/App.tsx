@@ -12,8 +12,8 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 function App() {
-  const dfRecordMap = defaultRecordMap as unknown as ExtendedRecordMap
-  const testRecordMap = myRecordMap
+  const dfRecordMap = myRecordMap as unknown as ExtendedRecordMap
+  const testRecordMap = myRecordMap 
   const [recordMap, setRecordMap] = useState(dfRecordMap)
   const params = useParams();
   useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
       const result = testRecordMap
 
       result.block = data
-      console.log(result);
+      console.log(`https://notion-fetch-api.vercel.app/api/${id?id:'97025400bdcd412eb087dd130af3302d'}`);
 
       setRecordMap(result as unknown as ExtendedRecordMap);
     }
