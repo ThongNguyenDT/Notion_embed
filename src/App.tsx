@@ -12,8 +12,10 @@ import { useEffect, useState } from 'react'
 
 
 function App() {
-  const dfRecordMap = myRecordMap as unknown as ExtendedRecordMap
-  const testRecordMap = myRecordMap 
+  const dfRecordMap = defaultRecordMap as unknown as ExtendedRecordMap
+  const testRecordMap = myRecordMap
+  let parts: string[] = document.location.href.split('/');
+  const notionIndex = parts.indexOf('Notion_embed');
   const [recordMap, setRecordMap] = useState(dfRecordMap)
 
   useEffect(() => {
@@ -21,27 +23,26 @@ function App() {
     async function getStaticProps(id: any) {
 
       const data = await fetch(
-        `https://notion-fetch-api.vercel.app/api/${id?id:'97025400bdcd412eb087dd130af3302d'}`
+        `https://notion-fetch-api.vercel.app/api/${id ? id : '97025400bdcd412eb087dd130af3302d'}`
       ).then(res => res.json());
 
       const result = testRecordMap
 
       result.block = data
-      // console.log(`https://notion-fetch-api.vercel.app/api/${id?id:'97025400bdcd412eb087dd130af3302d'}`);
-
       setRecordMap(result as unknown as ExtendedRecordMap);
     }
-      const parts = document.location.href.split('/');
-      const notionIndex = parts.indexOf('Notion_embed');
 
-      if (notionIndex !== -1 && parts[notionIndex + 1]) {
-        const id = parts[notionIndex + 1];
-        getStaticProps(id)
-      }
-  }, [])
+
+    if (notionIndex !== -1 && parts[notionIndex + 1]) {
+      const id = parts[notionIndex + 1];
+      getStaticProps(id)
+      
+    }
+  }, [ parts ])
 
   return (
-    <NotionRenderer
+  <>
+      <NotionRenderer
       recordMap={recordMap}
       fullPage={true}
       darkMode={false}
@@ -53,6 +54,8 @@ function App() {
         Modal
       }}
     />
+    {console.log("re_render")}
+    </>
   )
 }
 

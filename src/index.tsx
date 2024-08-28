@@ -18,11 +18,11 @@ import './index.css'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <>hello</>
   },
   {
     path: "/:id",
-    element: <App />,
+    element: <App />
   },
   {
     path: "/:p/:id",
