@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Notion_embed/static/css/main.e3b98122.css",
+    "main.js": "/Notion_embed/static/js/main.710d6e11.js",
+    "index.html": "/Notion_embed/index.html",
+    "main.e3b98122.css.map": "/Notion_embed/static/css/main.e3b98122.css.map",
+    "main.710d6e11.js.map": "/Notion_embed/static/js/main.710d6e11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3b98122.css",
+    "static/js/main.710d6e11.js"
+  ]
+}
