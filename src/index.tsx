@@ -9,6 +9,7 @@ import {
 import 'react-notion-x/src/styles.css'
 
 import App from './App'
+import NonHeader from './NonHeader'
 // used for code syntax highlighting (optional)
 // import 'prismjs/themes/prism-tomorrow.css'
 // used for rendering equations (optional)
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/Notion_embed/:id",
     element: <App />,
+  },
+  {
+    path: "/Notion_nonHeader/:id",
+    element: <NonHeader />
   },
 ]);
 

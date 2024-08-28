@@ -1,0 +1,19 @@
+.notion-header {
+    display: none;
+}
+
+.notion-page{
+    padding-top: 0;
+}
+
+.notion-page-cover-wrapper{
+    display: none;
+}
+
+.notion-page-has-cover .notion-page-icon-hero.notion-page-icon-image{
+    display: none;
+}
+
+.notion-title{
+    display: none;
+}
