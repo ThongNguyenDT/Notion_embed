@@ -21,11 +21,11 @@ const router = createBrowserRouter([
     element: <>hello</>
   },
   {
-    path: "/:id",
+    path: "/Notion_embed",
     element: <App />
   },
   {
-    path: "/:p/:id",
+    path: "/Notion_embed/:id",
     element: <App />,
   },
 ]);
